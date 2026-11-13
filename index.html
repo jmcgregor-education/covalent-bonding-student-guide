@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Covalent Bonding, Naming, Lewis Structures & VSEPR: Student Guide</title>
+<style>
+  /* Chemistry of Us palette (sampled from the project's Chemistry_Tile.png) */
+  :root {
+    --ink: #1f2a44;          /* deep navy text */
+    --muted: #6b6457;        /* warm gray */
+    --paper: #fffcf4;        /* cream paper */
+    --bg: #f8f1e1;           /* parchment */
+    --accent: #1c2f6b;       /* chalkboard navy */
+    --accent-soft: #e3e8f4;
+    --good: #3d7a2e;
+    --good-soft: #e6f2df;
+    --bad: #b5452a;
+    --bad-soft: #f8e4dc;
+    --warn-soft: #fbf0d2;
+    --border: #e0d5bf;
+    --teal: #3f8fbf;         /* watercolor blue */
+    --orange: #d9622b;       /* shield orange */
+    --purple: #6b3fa0;       /* flask purple */
+    --red: #a33d8c;          /* magenta script */
+    --green: #5f9e3e;        /* leaf green */
+    --gold: #e9a23b;         /* headline gold */
+    --pink: #b5452a;         /* brick */
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #f3ecdc;
+      --muted: #b9b29f;
+      --paper: #1a2440;
+      --bg: #111a33;
+      --accent: #8fa6ea;
+      --accent-soft: #22305a;
+      --good: #8fd47a;
+      --good-soft: #1d3322;
+      --bad: #ff9b80;
+      --bad-soft: #3a2220;
+      --warn-soft: #3a3118;
+      --border: #33406a;
+      --teal: #7cc3e8;
+      --orange: #f49a6a;
+      --purple: #b89ae0;
+      --red: #e08ccb;
+      --green: #9ccf7f;
+      --gold: #f5c46b;
+      --pink: #f08f78;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background:
+      radial-gradient(circle at 8% 18%, rgba(107, 63, 160, .10), transparent 32%),
+      radial-gradient(circle at 92% 55%, rgba(63, 143, 191, .12), transparent 36%),
+      radial-gradient(circle at 30% 92%, rgba(233, 162, 59, .10), transparent 30%),
+      var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+  }
+  header.top {
+    background: linear-gradient(120deg, #1c2f6b 0%, #4a3180 55%, #3f8fbf 100%);
+    color: #fff;
+    padding: 28px 20px 22px;
+    box-shadow: 0 4px 0 #e9a23b;
+  }
+  header.top h1 { margin: 0 0 6px; font-size: 1.6rem; }
+  header.top p { margin: 0; opacity: .92; }
+  header.top .brand {
+    font-size: .78rem; font-weight: 700; letter-spacing: .14em;
+    text-transform: uppercase; color: #f5c46b; margin-bottom: 6px;
+  }
+  nav.toc {
+    position: sticky; top: 0; z-index: 5;
+    background: var(--paper);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 14px;
+    display: flex; gap: 8px; flex-wrap: wrap;
+  }
+  nav.toc a {
+    color: var(--accent); text-decoration: none; font-size: .9rem;
+    padding: 4px 10px; border-radius: 999px; border: 1px solid var(--border);
+  }
+  main { max-width: 900px; margin: 0 auto; padding: 18px 16px 60px; }
+  section.card {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 22px 18px;
+    margin: 18px 0;
+  }
+  section.card h2 { margin-top: 0; font-size: 1.3rem; }
+  section.card h3 { font-size: 1.05rem; margin-bottom: 6px; }
+  .tag {
+    display: inline-block; font-size: .75rem; font-weight: 600;
+    background: var(--accent-soft); color: var(--accent);
+    padding: 2px 9px; border-radius: 999px; margin-bottom: 6px;
+  }
+  .vocab {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 10px; margin: 12px 0;
+  }
+  .vocab div {
+    border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px;
+    background: var(--bg);
+  }
+  .vocab b { display: block; color: var(--accent); }
+  .note {
+    background: var(--warn-soft); border-left: 4px solid #d4a017;
+    padding: 10px 14px; border-radius: 8px; margin: 12px 0; font-size: .95rem;
+  }
+  .challenge {
+    background: var(--accent-soft); border-left: 4px solid var(--accent);
+    padding: 10px 14px; border-radius: 8px; margin: 12px 0;
+  }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: .92rem; }
+  th, td { border: 1px solid var(--border); padding: 7px 8px; text-align: left; vertical-align: top; }
+  th { background: var(--bg); }
+  select, input[type="number"] {
+    font: inherit; padding: 6px 8px; border-radius: 8px;
+    border: 1px solid var(--border); background: var(--paper); color: var(--ink);
+  }
+  input[type="number"] { width: 80px; }
+  button {
+    font: inherit; cursor: pointer;
+    padding: 7px 14px; border-radius: 8px; border: 0;
+    background: var(--accent); color: #fff; font-weight: 600;
+  }
+  button.ghost {
+    background: transparent; color: var(--accent); border: 1px solid var(--accent);
+  }
+  .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin: 8px 0; }
+  .result {
+    margin-top: 10px; padding: 10px 12px; border-radius: 8px; font-size: .95rem;
+    display: none;
+  }
+  .result.good { display: block; background: var(--good-soft); color: var(--good); }
+  .result.bad { display: block; background: var(--bad-soft); color: var(--bad); }
+  .result.info { display: block; background: var(--accent-soft); color: var(--accent); }
+  .q { border-top: 1px dashed var(--border); padding-top: 12px; margin-top: 12px; }
+  .q:first-of-type { border-top: 0; margin-top: 6px; }
+  .q label { display: block; padding: 3px 0; cursor: pointer; }
+  .video-block { margin: 14px 0; }
+  .video-block .frame {
+    position: relative; width: 100%; padding-top: 56.25%;
+    border-radius: 10px; overflow: hidden; background: #000;
+  }
+  .video-block iframe {
+    position: absolute; inset: 0; width: 100%; height: 100%; border: 0;
+  }
+  .video-block .cap { font-size: .85rem; color: var(--muted); margin-top: 4px; }
+  .output-box {
+    font-family: ui-monospace, Menlo, Consolas, monospace;
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: 10px; padding: 12px; margin-top: 10px; font-size: .95rem;
+  }
+  .shape-svg { width: 100%; max-width: 280px; height: auto; display: block; margin: 8px auto; }
+  .steps li { margin-bottom: 6px; }
+  .footer-note { font-size: .85rem; color: var(--muted); text-align: center; margin-top: 30px; }
+  section.card { border-left: 6px solid var(--sec, var(--accent)); }
+  section#launch { --sec: var(--orange); }
+  section#sharing { --sec: var(--accent); }
+  section#polarity { --sec: var(--teal); }
+  section#naming { --sec: var(--purple); }
+  section#lewis { --sec: var(--red); }
+  section#vsepr { --sec: var(--green); }
+  section#misconceptions { --sec: var(--gold); }
+  section#exit { --sec: var(--pink); }
+  section.card h2 { color: var(--sec, var(--ink)); }
+  .tag {
+    background: color-mix(in srgb, var(--sec, var(--accent)) 18%, transparent);
+    color: var(--sec, var(--accent));
+  }
+  nav.toc a { color: var(--accent); }
+  .figure { margin: 14px 0; }
+  .figure > svg { display: block; width: 100%; max-width: 620px; height: auto; margin: 0 auto; }
+  .figure figcaption { font-size: .85rem; color: var(--muted); text-align: center; margin-top: 6px; }
+  .gallery {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 10px; margin: 12px 0;
+  }
+  .gallery figure {
+    margin: 0; background: var(--bg); border: 1px solid var(--border);
+    border-radius: 10px; padding: 8px;
+  }
+  .gallery svg { width: 100%; height: auto; display: block; }
+  .gallery figcaption { font-size: .85rem; text-align: center; color: var(--muted); margin-top: 4px; }
+  @media print {
+    nav.toc, button, select, input { display: none !important; }
+    section.card { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="brand">The Chemistry of Us · Every atom. Every choice. Every day.</div>
+  <h1>Covalent Bonding, Naming, Lewis Structures & VSEPR</h1>
+  <p>Student Guide · Targets TEKS C.7A, C.7B, C.7C · Work through each section, use the checks, and keep notes in your notebook.</p>
+  <svg viewBox="0 0 700 130" width="100%" role="img" aria-label="Ball-and-stick models of water, carbon dioxide, ammonia, and methane" style="display:block;margin-top:14px;max-height:130px">
+    <g stroke="#fff" stroke-width="4" opacity=".9">
+      <line x1="90" y1="65" x2="50" y2="95"/><line x1="90" y1="65" x2="130" y2="95"/>
+      <line x1="216" y1="61" x2="234" y2="61" stroke-width="3"/><line x1="216" y1="69" x2="234" y2="69" stroke-width="3"/>
+      <line x1="266" y1="61" x2="284" y2="61" stroke-width="3"/><line x1="266" y1="69" x2="284" y2="69" stroke-width="3"/>
+      <line x1="380" y1="70" x2="350" y2="100"/><line x1="380" y1="70" x2="410" y2="100"/><line x1="380" y1="70" x2="380" y2="32"/>
+      <line x1="560" y1="65" x2="522" y2="65"/><line x1="560" y1="65" x2="598" y2="65"/><line x1="560" y1="65" x2="560" y2="27"/><line x1="560" y1="65" x2="560" y2="103"/>
+    </g>
+    <g font-family="system-ui, sans-serif" font-weight="700" text-anchor="middle">
+      <circle cx="90" cy="65" r="18" fill="#fff"/><text x="90" y="71" font-size="18" fill="#1f6feb">O</text>
+      <circle cx="50" cy="95" r="12" fill="#fff"/><text x="50" y="100" font-size="13" fill="#1f6feb">H</text>
+      <circle cx="130" cy="95" r="12" fill="#fff"/><text x="130" y="100" font-size="13" fill="#1f6feb">H</text>
+      <circle cx="250" cy="65" r="16" fill="#fff"/><text x="250" y="71" font-size="16" fill="#1f6feb">C</text>
+      <circle cx="200" cy="65" r="16" fill="#fff"/><text x="200" y="71" font-size="16" fill="#1f6feb">O</text>
+      <circle cx="300" cy="65" r="16" fill="#fff"/><text x="300" y="71" font-size="16" fill="#1f6feb">O</text>
+      <circle cx="380" cy="70" r="16" fill="#fff"/><text x="380" y="76" font-size="16" fill="#1f6feb">N</text>
+      <circle cx="350" cy="100" r="12" fill="#fff"/><text x="350" y="105" font-size="13" fill="#1f6feb">H</text>
+      <circle cx="410" cy="100" r="12" fill="#fff"/><text x="410" y="105" font-size="13" fill="#1f6feb">H</text>
+      <circle cx="380" cy="32" r="12" fill="#fff"/><text x="380" y="37" font-size="13" fill="#1f6feb">H</text>
+      <circle cx="560" cy="65" r="16" fill="#fff"/><text x="560" y="71" font-size="16" fill="#1f6feb">C</text>
+      <circle cx="522" cy="65" r="12" fill="#fff"/><text x="522" y="70" font-size="13" fill="#1f6feb">H</text>
+      <circle cx="598" cy="65" r="12" fill="#fff"/><text x="598" y="70" font-size="13" fill="#1f6feb">H</text>
+      <circle cx="560" cy="27" r="12" fill="#fff"/><text x="560" y="32" font-size="13" fill="#1f6feb">H</text>
+      <circle cx="560" cy="103" r="12" fill="#fff"/><text x="560" y="108" font-size="13" fill="#1f6feb">H</text>
+    </g>
+  </svg>
+</header>
+
+<nav class="toc">
+  <a href="#launch">Launch</a>
+  <a href="#sharing">Sharing Electrons</a>
+  <a href="#polarity">Polar or Nonpolar</a>
+  <a href="#naming">Naming & Formulas</a>
+  <a href="#lewis">Lewis Structures</a>
+  <a href="#vsepr">VSEPR Shapes</a>
+  <a href="#misconceptions">Watch Out</a>
+  <a href="#exit">Exit Check</a>
+</nav>
+
+<main>
+
+<!-- ============ LAUNCH ============ -->
+<section class="card" id="launch">
+  <span class="tag">Launch</span>
+  <h2>Why does water behave the way it does?</h2>
+  <p>Water (H<sub>2</sub>O) and hydrogen peroxide (H<sub>2</sub>O<sub>2</sub>) are both covalent compounds made of the same two elements. Yet one is essential for life and the other is used as a disinfectant and bleaching agent. Sugar dissolves in water, but oil does not, even though both are covalent. Before we dig in, jot down:</p>
+  <ul class="steps">
+    <li><b>I notice:</b> two things you observe about water, oil, or sugar.</li>
+    <li><b>I wonder:</b> one question you have about why they behave differently.</li>
+  </ul>
+  <p>Keep your questions. We will come back to them at the end.</p>
+</section>
+
+<!-- ============ SHARING ELECTRONS ============ -->
+<section class="card" id="sharing">
+  <span class="tag">Section 1 · Sharing Electrons</span>
+  <h2>What is a covalent bond?</h2>
+  <p>Ionic compounds form when electrons are <i>transferred</i> from one atom to another. Covalent compounds form between nonmetals (and metalloids) that <i>share</i> electrons instead. Sharing lets each atom reach a stable outer shell, usually eight valence electrons, which is the <b>octet rule</b>.</p>
+
+  <div class="video-block" data-video="bonding"></div>
+
+  <figure class="figure" style="margin:14px 0">
+    <svg viewBox="0 0 520 180" role="img" aria-label="Two separate hydrogen atoms on the left; two hydrogen atoms sharing a pair of electrons on the right">
+      <line x1="260" y1="20" x2="260" y2="165" stroke="var(--border)" stroke-width="2" stroke-dasharray="4 4"/>
+      <text x="130" y="22" text-anchor="middle" font-size="15" font-weight="700" fill="var(--ink)">Separate atoms</text>
+      <text x="390" y="22" text-anchor="middle" font-size="15" font-weight="700" fill="var(--ink)">Shared pair = covalent bond</text>
+      <circle cx="60" cy="90" r="24" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
+      <text x="60" y="96" text-anchor="middle" font-size="18" font-weight="700" fill="var(--ink)">H</text>
+      <circle cx="95" cy="90" r="4" fill="var(--ink)"/>
+      <circle cx="200" cy="90" r="24" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
+      <text x="200" y="96" text-anchor="middle" font-size="18" font-weight="700" fill="var(--ink)">H</text>
+      <circle cx="165" cy="90" r="4" fill="var(--ink)"/>
+      <ellipse cx="390" cy="90" rx="78" ry="34" fill="var(--accent)" opacity=".15"/>
+      <line x1="354" y1="90" x2="426" y2="90" stroke="var(--ink)" stroke-width="3"/>
+      <circle cx="378" cy="82" r="4" fill="var(--ink)"/><circle cx="402" cy="98" r="4" fill="var(--ink)"/>
+      <circle cx="330" cy="90" r="24" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
+      <text x="330" y="96" text-anchor="middle" font-size="18" font-weight="700" fill="var(--ink)">H</text>
+      <circle cx="450" cy="90" r="24" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
+      <text x="450" y="96" text-anchor="middle" font-size="18" font-weight="700" fill="var(--ink)">H</text>
+      <text x="130" y="158" text-anchor="middle" font-size="13" fill="var(--muted)">Each atom has one electron to offer</text>
+      <text x="390" y="158" text-anchor="middle" font-size="13" fill="var(--muted)">Both atoms count the pair toward a full shell</text>
+    </svg>
+    <figcaption>Two hydrogen atoms each contribute one electron. Sharing the pair lets each atom count two electrons in its shell.</figcaption>
+  </figure>
+
+  <div class="vocab">
+    <div><b>Covalent bond</b>A bond formed when atoms share electrons.</div>
+    <div><b>Molecule</b>A group of atoms held together by covalent bonds.</div>
+    <div><b>Covalent compound</b>A compound of two or more nonmetals that share electrons. Also called a molecular compound.</div>
+    <div><b>Valence electrons</b>Electrons in the outermost energy level that take part in bonding.</div>
+    <div><b>Octet rule</b>Atoms tend to share electrons to reach eight valence electrons.</div>
+    <div><b>Molecular formula</b>Shows the actual number of atoms of each element in one molecule.</div>
+  </div>
+
+  <h3>Key ideas</h3>
+  <ul class="steps">
+    <li>Covalent compounds can form in <b>more than one ratio</b> between the same two nonmetals (CO and CO<sub>2</sub> are both carbon and oxygen). Ionic compounds have one fixed ratio.</li>
+    <li>A molecular formula is <b>never reduced</b>. H<sub>2</sub>O<sub>2</sub> is a real molecule, not a simplified version of HO.</li>
+    <li>Hydrogen forms only <b>one</b> bond, and it is never the central atom in a molecule.</li>
+    <li>Carbon usually forms <b>four</b> bonds (any mix of single, double, or triple) and rarely has lone pairs.</li>
+  </ul>
+
+  <div class="q">
+    <p><b>Quick check:</b> Which pair of elements most likely forms a covalent compound?</p>
+    <div id="q-sharing"></div>
+  </div>
+</section>
+
+<!-- ============ POLARITY ============ -->
+<section class="card" id="polarity">
+  <span class="tag">Section 2 · Polar or Nonpolar?</span>
+  <h2>How evenly are electrons shared?</h2>
+  <p>Electronegativity is how strongly an atom pulls on shared electrons. The bigger the difference between two atoms, the more unevenly the electrons are shared. Use these guidelines:</p>
+  <table>
+    <tr><th>Electronegativity difference (ΔEN)</th><th>Bond type</th></tr>
+    <tr><td>Less than 0.4</td><td><b>Nonpolar covalent</b>: electrons shared about equally</td></tr>
+    <tr><td>0.4 to 1.7</td><td><b>Polar covalent</b>: electrons shared unevenly</td></tr>
+    <tr><td>Greater than 1.7</td><td><b>Usually ionic</b>: a rough guideline (see challenge below)</td></tr>
+  </table>
+
+  <h3>Electronegativity calculator</h3>
+  <p>Pick two elements. Values are Pauling electronegativities (use your periodic table sheet for others).</p>
+  <div class="row">
+    <select id="enA"></select>
+    <span>and</span>
+    <select id="enB"></select>
+    <button id="enBtn">Classify this bond</button>
+  </div>
+  <div class="output-box" id="enOut">Choose two elements and press the button.</div>
+
+  <figure class="figure" style="margin:14px 0">
+    <svg viewBox="0 0 520 170" role="img" aria-label="Left: two identical hydrogen atoms share electrons equally. Right: hydrogen and chlorine share electrons unevenly, with the chlorine end slightly negative.">
+      <line x1="260" y1="15" x2="260" y2="150" stroke="var(--border)" stroke-width="2" stroke-dasharray="4 4"/>
+      <text x="130" y="24" text-anchor="middle" font-size="15" font-weight="700" fill="var(--ink)">Nonpolar: H–H</text>
+      <text x="390" y="24" text-anchor="middle" font-size="15" font-weight="700" fill="var(--ink)">Polar: H–Cl</text>
+      <line x1="90" y1="85" x2="170" y2="85" stroke="var(--ink)" stroke-width="4"/>
+      <circle cx="70" cy="85" r="22" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
+      <text x="70" y="91" text-anchor="middle" font-size="16" font-weight="700" fill="var(--ink)">H</text>
+      <circle cx="190" cy="85" r="22" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
+      <text x="190" y="91" text-anchor="middle" font-size="16" font-weight="700" fill="var(--ink)">H</text>
+      <text x="130" y="135" text-anchor="middle" font-size="13" fill="var(--muted)">Electrons shared equally (ΔEN &lt; 0.4)</text>
+      <line x1="320" y1="85" x2="420" y2="85" stroke="var(--ink)" stroke-width="4"/>
+      <circle cx="300" cy="85" r="22" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
+      <text x="300" y="91" text-anchor="middle" font-size="16" font-weight="700" fill="var(--ink)">H</text>
+      <text x="300" y="66" text-anchor="middle" font-size="14" font-weight="700" fill="var(--ink)">δ+</text>
+      <circle cx="440" cy="85" r="24" fill="#fbe9e7" stroke="#c0392b" stroke-width="2"/>
+      <text x="440" y="91" text-anchor="middle" font-size="16" font-weight="700" fill="var(--ink)">Cl</text>
+      <text x="440" y="66" text-anchor="middle" font-size="14" font-weight="700" fill="var(--ink)">δ−</text>
+      <line x1="330" y1="50" x2="410" y2="50" stroke="var(--accent)" stroke-width="2.5"/>
+      <polygon points="412,50 402,45 402,55" fill="var(--accent)"/>
+      <text x="390" y="40" text-anchor="middle" font-size="12" fill="var(--accent)">pulled toward Cl</text>
+      <text x="390" y="135" text-anchor="middle" font-size="13" fill="var(--muted)">Electrons shared unevenly (ΔEN 0.4 to 1.7)</text>
+    </svg>
+    <figcaption>δ+ (delta plus) and δ− (delta minus) mark the slightly positive and slightly negative ends of a polar bond.</figcaption>
+  </figure>
+
+  <div class="challenge">
+    <b>Challenge:</b> Hydrogen fluoride (HF) has an electronegativity difference of about 1.8, which is above the 1.7 guideline, yet HF is a covalent molecule. What does this tell you about the 1.7 rule? Why do you think it is a <i>guideline</i> rather than a hard cutoff?
+  </div>
+
+  <div class="video-block" data-video="polar" style="display:none"></div>
+
+  <div class="q">
+    <p><b>Quick check:</b> Which bond is nonpolar?</p>
+    <div id="q-polar"></div>
+  </div>
+
+  <h3>Polarity and solubility</h3>
+  <p>"Like dissolves like." Water is a polar molecule: its hydrogen end is slightly positive and its oxygen end is slightly negative. That lets water form attractions with other polar molecules and ions, so sugar (full of polar O–H groups) dissolves. Oils and waxes are mostly nonpolar, so water cannot attract them well and they stay separate.</p>
+</section>
+
+<!-- ============ NAMING ============ -->
+<section class="card" id="naming">
+  <span class="tag">Section 3 · Naming & Formulas</span>
+  <h2>Naming covalent compounds with Greek prefixes</h2>
+  <p>Covalent compounds use <b>Greek prefixes</b> to say how many atoms of each element are present, because the same two elements can combine in several ratios.</p>
+  <table>
+    <tr><th>Number</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th></tr>
+    <tr><th>Prefix</th><td>mono-</td><td>di-</td><td>tri-</td><td>tetra-</td><td>penta-</td><td>hexa-</td><td>hepta-</td><td>octa-</td><td>nona-</td><td>deca-</td></tr>
+  </table>
+  <ol class="steps">
+    <li>Name the <b>first</b> element with its prefix. Leave off <b>mono-</b> here. (CO is <i>carbon monoxide</i>, not <i>monocarbon monoxide</i>.)</li>
+    <li>Name the <b>second</b> element with its prefix (use <b>mono-</b> if needed), then change the ending to <b>-ide</b>.</li>
+    <li>If the element name starts with a vowel, drop the final <b>a</b> or <b>o</b> of the prefix (but never the <b>i</b>). Example: <i>tetra</i> + <i>oxide</i> becomes <i>tetroxide</i>.</li>
+    <li>To write the formula, the prefixes become the subscripts. No prefix means one atom.</li>
+  </ol>
+
+  <div class="video-block" data-video="naming" style="display:none"></div>
+
+  <div class="note"><b>Careful:</b> Ionic compounds <i>never</i> use prefixes. Covalent compounds always do (except that the first element skips <i>mono-</i>).</div>
+
+  <h3>Name ⇄ formula practice</h3>
+  <div class="row">
+    <select id="nameSel"></select>
+    <button class="ghost" id="nameBtn">Check my pick</button>
+  </div>
+  <div id="namePracticeQs"></div>
+  <div class="result" id="nameRes"></div>
+
+  <div class="q">
+    <p><b>Quick check:</b> Choose the correct name for N<sub>2</sub>O<sub>5</sub>.</p>
+    <div id="q-naming"></div>
+  </div>
+</section>
+
+<!-- ============ LEWIS ============ -->
+<section class="card" id="lewis">
+  <span class="tag">Section 4 · Lewis Structures</span>
+  <h2>Drawing electron dot structures</h2>
+  <p>A <b>Lewis structure</b> shows how atoms share electrons. A dash between two symbols is one shared pair. Dots beside a symbol are lone pairs (nonbonding) or single unpaired electrons (ready to bond).</p>
+
+  <div class="video-block" data-video="lewis" style="display:none"></div>
+
+  <h3>Bond capacity cheat sheet</h3>
+  <table>
+    <tr><th>Element</th><th>Valence electrons</th><th>Typical bonds</th><th>Central atom?</th></tr>
+    <tr><td>H</td><td>1</td><td>1</td><td>Never</td></tr>
+    <tr><td>Halogens (F, Cl, Br, I)</td><td>7</td><td>1</td><td>Rarely</td></tr>
+    <tr><td>O family (O, S)</td><td>6</td><td>2 (sometimes 1 or 3)</td><td>Yes</td></tr>
+    <tr><td>N family (N, P)</td><td>5</td><td>3 (sometimes 1, 2, or 5)</td><td>Yes</td></tr>
+    <tr><td>C</td><td>4</td><td>4</td><td>Yes</td></tr>
+  </table>
+
+  <h3>Method: Needed · Available · Shared</h3>
+  <ol class="steps">
+    <li><b>Needed:</b> Add up the electrons each atom needs for a full shell (8 for most nonmetals, 2 for hydrogen).</li>
+    <li><b>Available:</b> Add up the valence electrons all the atoms actually have.</li>
+    <li><b>Shared:</b> Needed minus Available. Divide by 2 to get the number of bonds.</li>
+    <li>Put the least electronegative element in the center (never hydrogen). Connect the outer atoms with single bonds.</li>
+    <li>Use any leftover bonds as double or triple bonds between atoms that can form them.</li>
+    <li>Add lone pairs to finish each atom's shell. Check that the total electrons match your Available count.</li>
+  </ol>
+
+  <h3>Lewis structures at a glance</h3>
+  <p>Each dash is a shared pair. Dots are lone pairs. Notice how the number of bonds matches each atom's bond capacity.</p>
+  <div class="gallery" id="lewisGallery"></div>
+
+  <h3>Lewis calculator</h3>
+  <p>Pick a molecule, then fill in the Needed, Available, Shared, and Bonds values from the method above. Then press <b>Check</b>.</p>
+  <div class="row">
+    <select id="molSel"></select>
+    <button class="ghost" id="molShowBtn">Show the counts for me</button>
+  </div>
+  <table>
+    <tr><th>Needed</th><th>Available</th><th>Shared</th><th>Bonds</th></tr>
+    <tr>
+      <td><input type="number" id="inNeed" min="0"></td>
+      <td><input type="number" id="inAvail" min="0"></td>
+      <td><input type="number" id="inShared" min="0"></td>
+      <td><input type="number" id="inBonds" min="0"></td>
+    </tr>
+  </table>
+  <div class="row"><button id="lewisCheck">Check</button></div>
+  <div class="result" id="lewisRes"></div>
+
+  <div class="q">
+    <p><b>Quick check:</b> A central atom has two bonded atoms and two lone pairs. Which molecule matches this description?</p>
+    <div id="q-lewis"></div>
+  </div>
+</section>
+
+<!-- ============ VSEPR ============ -->
+<section class="card" id="vsepr">
+  <span class="tag">Section 5 · VSEPR Shapes</span>
+  <h2>Predicting molecular shape</h2>
+  <p><b>VSEPR</b> (valence shell electron pair repulsion) says electron groups around a central atom spread out as far apart as possible. A <b>group</b> is a bonded atom or a lone pair. Each bond counts as one group, even a double or triple bond. Lone pairs take up more space than bonded atoms, which squeezes the bond angles.</p>
+
+  <div class="video-block" data-video="vsepr" style="display:none"></div>
+
+  <h3>Shape builder</h3>
+  <div class="row">
+    <label>Bonded atoms: <select id="vBonded"><option>2</option><option>3</option><option>4</option></select></label>
+    <label>Lone pairs: <select id="vLone"><option>0</option><option>1</option><option>2</option></select></label>
+    <button id="vBtn">Build it</button>
+  </div>
+  <svg id="vsvg" class="shape-svg" viewBox="0 0 240 200" aria-label="Molecule shape diagram"></svg>
+  <div class="output-box" id="vOut">Choose bonded atoms and lone pairs, then press Build it.</div>
+
+  <h3>Shapes at a glance</h3>
+  <div class="gallery" id="shapeGallery"></div>
+
+  <h3>Shape reference</h3>
+  <table>
+    <tr><th>Groups around central atom</th><th>Shared (bonded) groups</th><th>Lone pairs</th><th>Bond angle</th><th>Molecular shape</th></tr>
+    <tr><td>2</td><td>2</td><td>0</td><td>180°</td><td>Linear</td></tr>
+    <tr><td>3</td><td>3</td><td>0</td><td>120°</td><td>Trigonal planar</td></tr>
+    <tr><td>3</td><td>2</td><td>1</td><td>118°</td><td>Bent</td></tr>
+    <tr><td>4</td><td>4</td><td>0</td><td>109.5°</td><td>Tetrahedral</td></tr>
+    <tr><td>4</td><td>3</td><td>1</td><td>107.3°</td><td>Trigonal pyramidal</td></tr>
+    <tr><td>4</td><td>2</td><td>2</td><td>104.5°</td><td>Bent</td></tr>
+  </table>
+  <p>Notice that some shapes share a name but have different angles. Lone pairs are the reason. Also notice that the <b>shape</b> counts only atoms, while the <b>electron group arrangement</b> counts lone pairs too.</p>
+
+  <div class="q">
+    <p><b>Quick check:</b> Ammonia (NH<sub>3</sub>) has three bonded atoms and one lone pair on nitrogen. What is its shape?</p>
+    <div id="q-vsepr"></div>
+  </div>
+</section>
+
+<!-- ============ MISCONCEPTIONS ============ -->
+<section class="card" id="misconceptions">
+  <span class="tag">Watch Out</span>
+  <h2>Common mistakes</h2>
+  <ul class="steps">
+    <li><b>"Molecular formulas should be simplified."</b> No. H<sub>2</sub>O<sub>2</sub> and HO are different substances.</li>
+    <li><b>"Lone pairs don't change the shape."</b> They do. They push bonded atoms closer together and change the angle and the name of the shape.</li>
+    <li><b>"Carbon can have lone pairs or skip its octet."</b> Carbon almost always forms four bonds with no lone pairs.</li>
+    <li><b>"Drawing the Lewis structure is extra work."</b> The Lewis structure shows where the electron groups are, which you need before you can predict the shape.</li>
+    <li><b>"Ionic compounds use prefixes too."</b> Only covalent compounds use Greek prefixes.</li>
+  </ul>
+  <div class="note"><b>Language check:</b> Atoms do not "want" electrons or get "greedy." Those are analogies. Bonding happens because sharing electrons lowers the energy of the atoms. Where do you think the "relationship" analogy breaks down?</div>
+</section>
+
+<!-- ============ EXIT CHECK ============ -->
+<section class="card" id="exit">
+  <span class="tag">Exit Check</span>
+  <h2>Check what you know</h2>
+  <p>Answer all five, then press <b>Score me</b>. Your teacher reads your score as information, not as a grade. Missed one? Look back at its section.</p>
+  <div id="exitQs"></div>
+  <div class="row"><button id="exitBtn">Score me</button></div>
+  <div class="result" id="exitRes"></div>
+</section>
+
+<p class="footer-note">Uses Summit K12 TEKS content for Covalent Bonding, Naming, and Formula Writing (5.1) and Covalent Compounds, Lewis Structures, and VSEPR Theory (5.2), rewritten as a student guide.</p>
+
+</main>
+
+<script>
+/* ============================================================
+   VIDEO CONFIG
+   Paste an embed URL (for example https://www.youtube.com/embed/XXXX)
+   into src. Blocks with an empty src stay hidden.
+   Videos are optional support, not required reading.
+   ============================================================ */
+const VIDEOS = {
+  bonding: {
+    title: "Optional support: Bonding models and Lewis structures (Crash Course Chemistry #24)",
+    src: "https://www.youtube.com/embed/a8LF7JEb0IA"
+  },
+  polar: {
+    title: "Optional support: Polar vs. nonpolar covalent bonds (Chad's Prep)",
+    src: "https://www.youtube.com/embed/fRYCIWdcMSs"
+  },
+  naming: {
+    title: "Optional support: Naming covalent compounds with Greek prefixes (Mrs. Bodechon)",
+    src: "https://www.youtube.com/embed/NcgjrNLPBLA"
+  },
+  lewis: {
+    title: "Optional support: How to draw Lewis structures in five easy steps (Wayne Breslyn)",
+    src: "https://www.youtube.com/embed/1ZlnzyHahvo"
+  },
+  vsepr: {
+    title: "Optional support: Molecular geometry and bond angles with VSEPR (Mr. Krug)",
+    src: "https://www.youtube.com/embed/kx0724WVNJ8"
+  }
+};
+
+function renderVideos() {
+  document.querySelectorAll("[data-video]").forEach(el => {
+    const v = VIDEOS[el.dataset.video];
+    if (!v || !v.src) { el.style.display = "none"; return; }
+    el.style.display = "block";
+    el.innerHTML = `
+      <div class="frame"><iframe src="${v.src}" title="${v.title}"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen loading="lazy"></iframe></div>
+      <div class="cap">${v.title}</div>`;
+  });
+}
+
+/* ============================================================
+   GENERIC QUIZ BUILDER
+   ============================================================ */
+function buildQuiz(container, item, idx) {
+  const name = `${container}-${idx}`;
+  const wrap = document.createElement("div");
+  wrap.className = "q";
+  wrap.innerHTML = `
+    <p><b>${item.q}</b></p>
+    ${item.opts.map((o, i) => `<label><input type="radio" name="${name}" value="${i}"> ${o}</label>`).join("")}
+    <div class="row"><button class="ghost" data-check="${name}">Check</button></div>
+    <div class="result" id="res-${name}"></div>`;
+  return wrap;
+}
+
+function attachCheck(name, correctIdx, why) {
+  const btn = document.querySelector(`[data-check="${name}"]`);
+  btn.addEventListener("click", () => {
+    const sel = document.querySelector(`input[name="${name}"]:checked`);
+    const out = document.getElementById(`res-${name}`);
+    if (!sel) { out.className = "result info"; out.textContent = "Pick an answer first."; return; }
+    if (parseInt(sel.value, 10) === correctIdx) {
+      out.className = "result good"; out.textContent = "Correct! " + why;
+    } else {
+      out.className = "result bad"; out.textContent = "Not quite. " + why;
+    }
+  });
+}
+
+function mountQuiz(containerId, items, prefix) {
+  const host = document.getElementById(containerId);
+  if (!host) return;
+  items.forEach((item, i) => {
+    const node = buildQuiz(prefix, item, i);
+    host.appendChild(node);
+  });
+  items.forEach((item, i) => attachCheck(`${prefix}-${i}`, item.a, item.why));
+}
+
+/* ============================================================
+   QUIZ CONTENT (section checks + exit check)
+   ============================================================ */
+mountQuiz("q-sharing", [{
+  q: "Which pair would most likely share electrons in a covalent bond?",
+  opts: ["Sodium and chlorine", "Carbon and oxygen", "Magnesium and oxygen", "Potassium and fluorine"],
+  a: 1,
+  why: "Carbon and oxygen are both nonmetals, so they share electrons. The others involve a metal, which usually transfers electrons instead."
+}], "sharing");
+
+mountQuiz("q-polar", [{
+  q: "Which bond is nonpolar covalent?",
+  opts: ["H–Cl (ΔEN ≈ 0.96)", "C–H (ΔEN ≈ 0.35)", "O–H (ΔEN ≈ 1.24)", "Na–Cl (ΔEN ≈ 2.23)"],
+  a: 1,
+  why: "C–H has a difference under 0.4, so electrons are shared about equally. The rest are polar covalent or ionic by the guideline."
+}], "polar");
+
+mountQuiz("q-naming", [{
+  q: "Which is the correct name for N₂O₅?",
+  opts: ["Dinitrogen pentoxide", "Nitrogen pentoxide", "Dinitrogen pentaoxide", "Dinitrogen oxide pentane"],
+  a: 0,
+  why: "Two nitrogens get 'di-' on the first word, and five oxygens get 'penta-' with the final 'a' dropped before 'oxide'. 'Nitrogen pentoxide' is missing the 'di-' prefix."
+}], "naming");
+
+mountQuiz("q-lewis", [{
+  q: "Which molecule has two bonded atoms and two lone pairs on the central atom?",
+  opts: ["CO₂", "H₂O", "NH₃", "CH₄"],
+  a: 1,
+  why: "Water (H₂O) has two bonded H atoms and two lone pairs on oxygen. CO₂ has no lone pairs, NH₃ has one, and CH₄ has none."
+}], "lewis");
+
+mountQuiz("q-vsepr", [{
+  q: "What is the molecular shape of NH₃ (three bonded atoms, one lone pair on N)?",
+  opts: ["Trigonal planar", "Bent", "Trigonal pyramidal", "Tetrahedral"],
+  a: 2,
+  why: "Four electron groups, three of them bonded, make a trigonal pyramidal shape with an angle near 107°."
+}], "vsepr");
+
+mountQuiz("exitQs", [
+  {
+    q: "1. A covalent bond is best described as:",
+    opts: ["A transfer of electrons from a metal to a nonmetal", "A sharing of electrons between atoms", "An attraction between oppositely charged ions", "A sea of delocalized electrons"],
+    a: 1, why: "Covalent bonds involve shared electrons."
+  },
+  {
+    q: "2. Two atoms have an electronegativity difference of 0.3. The bond is:",
+    opts: ["Nonpolar covalent", "Polar covalent", "Ionic", "Impossible to classify"],
+    a: 0, why: "Differences under 0.4 are nonpolar covalent."
+  },
+  {
+    q: "3. The correct name for CCl₄ is:",
+    opts: ["Carbon chloride", "Carbon tetrachloride", "Monocarbon tetrachloride", "Carbon tetrachlorine"],
+    a: 1, why: "Carbon takes no prefix in the first word (mono- is dropped). Four chlorines get 'tetra-' and the ending becomes '-ide'. Note 'chloride' is the ending."
+  },
+  {
+    q: "4. A central atom with four bonded groups and no lone pairs has which shape and angle?",
+    opts: ["Trigonal planar, 120°", "Tetrahedral, 109.5°", "Linear, 180°", "Bent, 104.5°"],
+    a: 1, why: "Four bonded groups with no lone pairs form a tetrahedron with 109.5° angles."
+  },
+  {
+    q: "5. Why does H₂O have a smaller bond angle (104.5°) than the bent shape with one lone pair (118°)?",
+    opts: ["It has more bonded atoms", "Two lone pairs push the bonded atoms closer together", "Hydrogen is larger than oxygen", "Its bonds are triple bonds"],
+    a: 1, why: "Lone pairs take up more space than bonded atoms, so more of them squeeze the bond angle."
+  }
+], "exit");
+
+/* Exit check uses a separate scorer so it can total the score */
+(function exitWiring() {
+  const items = [1,2,3,4,5].map(i => i);
+  const correct = [1, 0, 1, 1, 1];
+  document.getElementById("exitBtn").addEventListener("click", () => {
+    let score = 0, missed = [];
+    correct.forEach((c, i) => {
+      const sel = document.querySelector(`input[name="exit-${i}"]:checked`);
+      if (sel && parseInt(sel.value, 10) === c) score++;
+      else missed.push(i + 1);
+    });
+    const out = document.getElementById("exitRes");
+    out.className = score >= 4 ? "result good" : "result info";
+    out.textContent = `You got ${score} of 5.` + (missed.length ? ` Review question${missed.length > 1 ? "s" : ""} ${missed.join(", ")} in the matching section.` : " Nice work!");
+  });
+})();
+
+/* ============================================================
+   ELECTRONEGATIVITY CALCULATOR (Pauling values)
+   ============================================================ */
+const EN = { H: 2.20, Li: 0.98, Na: 0.93, Mg: 1.31, Al: 1.61, Si: 1.90, P: 2.19, S: 2.58, Cl: 3.16, Br: 2.96, I: 2.66, C: 2.55, N: 3.04, O: 3.44, F: 3.98, B: 2.04 };
+
+(function enWiring() {
+  const a = document.getElementById("enA"), b = document.getElementById("enB");
+  Object.keys(EN).forEach(k => {
+    a.add(new Option(k, k)); b.add(new Option(k, k));
+  });
+  a.value = "C"; b.value = "H";
+  document.getElementById("enBtn").addEventListener("click", () => {
+    const d = Math.abs(EN[a.value] - EN[b.value]);
+    let kind;
+    if (a.value === b.value || d < 0.4) kind = "Nonpolar covalent (shared about equally)";
+    else if (d <= 1.7) kind = "Polar covalent (shared unevenly)";
+    else kind = "Usually ionic by the guideline. Check the challenge!";
+    document.getElementById("enOut").textContent =
+      `${a.value}–${b.value}: ΔEN = ${d.toFixed(2)}\n→ ${kind}`;
+  });
+})();
+
+/* ============================================================
+   NAMING PRACTICE
+   ============================================================ */
+const NAMES = [
+  { name: "Carbon monoxide", formula: "CO" },
+  { name: "Carbon dioxide", formula: "CO₂" },
+  { name: "Dinitrogen tetroxide", formula: "N₂O₄" },
+  { name: "Sulfur hexafluoride", formula: "SF₆" },
+  { name: "Diphosphorus pentoxide", formula: "P₂O₅" },
+  { name: "Dihydrogen monoxide", formula: "H₂O" }
+];
+(function namingWiring() {
+  const sel = document.getElementById("nameSel");
+  const shuffled = [...NAMES].sort(() => Math.random() - 0.5);
+  shuffled.forEach(n => sel.add(new Option(n.name, n.name)));
+  const host = document.getElementById("namePracticeQs");
+  host.innerHTML = `<p style="color:var(--muted);font-size:.92rem">Pick a name from the list, then choose its formula below.</p>`;
+  const formulas = [...new Set(NAMES.map(n => n.formula))].sort(() => Math.random() - 0.5);
+  const group = document.createElement("div");
+  group.className = "row";
+  group.id = "formulaChoices";
+  formulas.forEach((f, i) => {
+    group.insertAdjacentHTML("beforeend", `<label><input type="radio" name="fchoice" value="${f}"> ${f}</label>&nbsp;&nbsp;`);
+  });
+  host.appendChild(group);
+  document.getElementById("nameBtn").addEventListener("click", () => {
+    const nm = sel.value;
+    const pick = document.querySelector('input[name="fchoice"]:checked');
+    const out = document.getElementById("nameRes");
+    const correctF = NAMES.find(n => n.name === nm).formula;
+    if (!pick) { out.className = "result info"; out.textContent = "Choose a formula first."; return; }
+    if (pick.value === correctF) { out.className = "result good"; out.textContent = `${nm} = ${correctF}. Nice!`; }
+    else { out.className = "result bad"; out.textContent = `${nm} is not ${pick.value}. Re-read the prefixes and try again.`; }
+  });
+})();
+
+/* ============================================================
+   LEWIS CALCULATOR (Needed-Available-Shared)
+   ============================================================ */
+const VAL = { H: 1, C: 4, N: 5, O: 6 };
+const NEED = { H: 2, C: 8, N: 8, O: 8 };
+const MOLS = {
+  "H₂O":  { atoms: { H: 2, O: 1 }, central: "O", bonded: 2, lone: 2 },
+  "CO₂":  { atoms: { C: 1, O: 2 }, central: "C", bonded: 2, lone: 0 },
+  "NH₃":  { atoms: { N: 1, H: 3 }, central: "N", bonded: 3, lone: 1 },
+  "CH₄":  { atoms: { C: 1, H: 4 }, central: "C", bonded: 4, lone: 0 }
+};
+function molCounts(m) {
+  let needed = 0, avail = 0;
+  for (const [el, n] of Object.entries(m.atoms)) { needed += n * NEED[el]; avail += n * VAL[el]; }
+  const shared = needed - avail;
+  return { needed, avail, shared, bonds: shared / 2 };
+}
+(function lewisWiring() {
+  const sel = document.getElementById("molSel");
+  Object.keys(MOLS).forEach(k => sel.add(new Option(k, k)));
+  document.getElementById("molShowBtn").addEventListener("click", () => {
+    const c = molCounts(MOLS[sel.value]);
+    document.getElementById("lewisRes").className = "result info";
+    document.getElementById("lewisRes").textContent =
+      `${sel.value}: Needed ${c.needed}, Available ${c.avail}, Shared ${c.shared}, Bonds ${c.bonds}. Try filling these in yourself first next time!`;
+  });
+  document.getElementById("lewisCheck").addEventListener("click", () => {
+    const c = molCounts(MOLS[sel.value]);
+    const got = {
+      needed: parseInt(document.getElementById("inNeed").value, 10),
+      avail: parseInt(document.getElementById("inAvail").value, 10),
+      shared: parseInt(document.getElementById("inShared").value, 10),
+      bonds: parseFloat(document.getElementById("inBonds").value)
+    };
+    const out = document.getElementById("lewisRes");
+    const misses = [];
+    if (got.needed !== c.needed) misses.push("Needed");
+    if (got.avail !== c.avail) misses.push("Available");
+    if (got.shared !== c.shared) misses.push("Shared");
+    if (got.bonds !== c.bonds) misses.push("Bonds");
+    if (misses.length === 0) { out.className = "result good"; out.textContent = `All four match for ${sel.value}. Now draw it, placing lone pairs to finish each shell.`; }
+    else { out.className = "result bad"; out.textContent = `Check: ${misses.join(", ")}. Remember Needed uses 8 for most nonmetals and 2 for H.`; }
+  });
+})();
+
+/* ============================================================
+   VSEPR SHAPE BUILDER
+   ============================================================ */
+const SHAPES = {
+  "2-0": { shape: "Linear", angle: "180°", eg: "Linear" },
+  "3-0": { shape: "Trigonal planar", angle: "120°", eg: "Trigonal planar" },
+  "2-1": { shape: "Bent", angle: "118°", eg: "Trigonal planar" },
+  "4-0": { shape: "Tetrahedral", angle: "109.5°", eg: "Tetrahedral" },
+  "3-1": { shape: "Trigonal pyramidal", angle: "107.3°", eg: "Tetrahedral" },
+  "2-2": { shape: "Bent", angle: "104.5°", eg: "Tetrahedral" }
+};
+function drawShape(bonded, lone) {
+  const cx = 120, cy = 100, r = 60;
+  let svg = `<circle cx="${cx}" cy="${cy}" r="14" fill="var(--accent)"/>`;
+  const lines = [];
+  const endpoints = {
+    "2-0": [[-1,0],[1,0]],
+    "3-0": [[0,-1],[-0.87,0.5],[0.87,0.5]],
+    "2-1": [[-0.85,0.55],[0.85,0.55]],
+    "4-0": [[0,-1],[0.94,0.33],[-0.94,0.33],[0,0.9]],
+    "3-1": [[0,-1],[0.94,0.33],[-0.94,0.33]],
+    "2-2": [[-0.85,0.55],[0.85,0.55]]
+  };
+  const key = `${bonded}-${lone}`;
+  const dirs = endpoints[key] || [];
+  dirs.forEach(([dx, dy]) => {
+    const x2 = cx + dx * r, y2 = cy + dy * r;
+    svg += `<line x1="${cx}" y1="${cy}" x2="${x2}" y2="${y2}" stroke="var(--ink)" stroke-width="3"/>`;
+    svg += `<circle cx="${x2}" cy="${y2}" r="12" fill="var(--paper)" stroke="var(--ink)" stroke-width="2"/>`;
+  });
+  if (lone > 0) {
+    const lp = key === "2-1" ? [[0,-1]] : key === "2-2" ? [[-0.4,-1],[0.4,-1]] : key === "3-1" ? [[0,-1]] : [];
+    lp.forEach(([dx, dy]) => {
+      const x = cx + dx * 40, y = cy + dy * 40;
+      svg += `<text x="${x}" y="${y}" text-anchor="middle" font-size="18" fill="var(--accent)">●●</text>`;
+    });
+  }
+  return svg;
+}
+(function vseprWiring() {
+  document.getElementById("vBtn").addEventListener("click", () => {
+    const b = parseInt(document.getElementById("vBonded").value, 10);
+    const l = parseInt(document.getElementById("vLone").value, 10);
+    const key = `${b}-${l}`;
+    const out = document.getElementById("vOut");
+    const svg = document.getElementById("vsvg");
+    if (!SHAPES[key]) {
+      svg.innerHTML = "";
+      out.textContent = "That combination is not in this unit's table. Count the groups again.";
+      return;
+    }
+    const s = SHAPES[key];
+    svg.innerHTML = drawShape(b, l);
+    out.textContent =
+      `Electron groups: ${b + l}\nElectron group arrangement: ${s.eg}\nMolecular shape: ${s.shape}\nApproximate bond angle: ${s.angle}`;
+  });
+})();
+
+/* ============================================================
+   INIT
+   ============================================================ */
+/* ============================================================
+   GRAPHICS: generated Lewis structures and VSEPR shape cards
+   ============================================================ */
+const DIRS = { up: [0,-1], down: [0,1], left: [-1,0], right: [1,0] };
+const LEWIS_MOLS = [
+  { name: "H₂O (water)", center: "O",
+    sides: [{ sym: "H", dir: "left", bond: 1 }, { sym: "H", dir: "right", bond: 1 }],
+    clp: ["up", "down"] },
+  { name: "CO₂ (carbon dioxide)", center: "C",
+    sides: [{ sym: "O", dir: "left", bond: 2, lp: ["up", "down"] }, { sym: "O", dir: "right", bond: 2, lp: ["up", "down"] }],
+    clp: [] },
+  { name: "NH₃ (ammonia)", center: "N",
+    sides: [{ sym: "H", dir: "left", bond: 1 }, { sym: "H", dir: "right", bond: 1 }, { sym: "H", dir: "down", bond: 1 }],
+    clp: ["up"] },
+  { name: "CH₄ (methane)", center: "C",
+    sides: [{ sym: "H", dir: "up", bond: 1 }, { sym: "H", dir: "down", bond: 1 }, { sym: "H", dir: "left", bond: 1 }, { sym: "H", dir: "right", bond: 1 }],
+    clp: [] }
+];
+
+const ELEMENT_COLORS = { H: "#2d7ff9", C: "#3a3f4b", N: "#8e44ad", O: "#e74c3c", Cl: "#1a9850", S: "#d99a00" };
+function atomSVG(x, y, sym) {
+  const c = ELEMENT_COLORS[sym] || "#0f9d8a";
+  return `<circle cx="${x}" cy="${y}" r="15" fill="${c}" stroke="var(--paper)" stroke-width="2"/>
+    <text x="${x}" y="${y + 5}" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">${sym}</text>`;
+}
+
+function pairSVG(x, y, d) {
+  const p = [-d[1], d[0]];
+  return [-5, 5].map(o =>
+    `<circle cx="${(x + p[0] * o).toFixed(1)}" cy="${(y + p[1] * o).toFixed(1)}" r="2.6" fill="var(--ink)"/>`
+  ).join("");
+}
+
+function lewisSVG(mol) {
+  const cx = 150, cy = 120, D = 85;
+  let bonds = "", pairs = "", atoms = "";
+  mol.sides.forEach(a => {
+    const d = DIRS[a.dir];
+    const ax = cx + d[0] * D, ay = cy + d[1] * D;
+    const p = [-d[1], d[0]];
+    const offs = a.bond === 2 ? [-4, 4] : a.bond === 3 ? [-6, 0, 6] : [0];
+    offs.forEach(o => {
+      bonds += `<line x1="${cx + d[0] * 18 + p[0] * o}" y1="${cy + d[1] * 18 + p[1] * o}" x2="${ax - d[0] * 18 + p[0] * o}" y2="${ay - d[1] * 18 + p[1] * o}" stroke="var(--ink)" stroke-width="2.5"/>`;
+    });
+    (a.lp || []).forEach(ld => {
+      const e = DIRS[ld];
+      pairs += pairSVG(ax + e[0] * 34, ay + e[1] * 34, e);
+    });
+    atoms += atomSVG(ax, ay, a.sym);
+  });
+  (mol.clp || []).forEach(ld => {
+    const e = DIRS[ld];
+    pairs += pairSVG(cx + e[0] * 34, cy + e[1] * 34, e);
+  });
+  atoms += atomSVG(cx, cy, mol.center);
+  return `<svg viewBox="0 0 300 240" role="img" aria-label="Lewis structure of ${mol.name}">${bonds}${pairs}${atoms}</svg>`;
+}
+
+function buildGalleries() {
+  const lg = document.getElementById("lewisGallery");
+  if (lg) {
+    lg.innerHTML = LEWIS_MOLS.map(m => `<figure>${lewisSVG(m)}<figcaption>${m.name}</figcaption></figure>`).join("");
+  }
+  const sg = document.getElementById("shapeGallery");
+  if (sg) {
+    const combos = [[2,0,"Linear · 180°"],[3,0,"Trigonal planar · 120°"],[2,1,"Bent · 118°"],[4,0,"Tetrahedral · 109.5°"],[3,1,"Trigonal pyramidal · 107.3°"],[2,2,"Bent · 104.5°"]];
+    sg.innerHTML = combos.map(([b, l, label]) =>
+      `<figure><svg viewBox="0 0 240 200" role="img" aria-label="${label}">${drawShape(b, l)}</svg><figcaption>${label}<br>${b} bonded, ${l} lone pair${l === 1 ? "" : l === 0 ? "s" : "s"}</figcaption></figure>`
+    ).join("");
+  }
+}
+
+buildGalleries();
+renderVideos();
+</script>
+</body>
+</html>
